@@ -84,3 +84,7 @@ python tools/status_cli.py --session <session-id> --json
 - 日志格式（v4 / zstd 分帧）随 DSH 升级可能变，届时改 `session_status.cjs`；`tests/` 能第一时间发现。
 - 轮询默认跟随"最近修改的会话"；多个工作区同时跑时，用配置里的 `session_id` 固定。
 - 只测过 Windows + AstrBot 4.29 + aiocqhttp；其它平台未验证。
+
+## License
+
+MIT © 2026 tatusi285

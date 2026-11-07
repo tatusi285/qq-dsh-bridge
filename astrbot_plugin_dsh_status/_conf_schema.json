@@ -1,0 +1,37 @@
+{
+  "session_id": {
+    "type": "string",
+    "description": "固定监听的 DSH 会话 ID；留空则自动跟随最近更新的会话",
+    "default": ""
+  },
+  "allowed_uins": {
+    "type": "list",
+    "description": "允许使用的 QQ 号；留空表示不限制（不建议）",
+    "default": []
+  },
+  "private_only": {
+    "type": "bool",
+    "description": "只响应私聊",
+    "default": true
+  },
+  "watch_enabled": {
+    "type": "bool",
+    "description": "是否允许 /watch 开启完成推送",
+    "default": true
+  },
+  "poll_seconds": {
+    "type": "int",
+    "description": "轮询间隔（秒）",
+    "default": 3
+  },
+  "compact": {
+    "type": "bool",
+    "description": "紧凑模式：卡片压到 140 字以内，避免被输出插件转成图片",
+    "default": false
+  },
+  "node_path": {
+    "type": "string",
+    "description": "Node 可执行文件路径；留空使用默认安装位置",
+    "default": ""
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@local/dsh-qq-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local control surface for the QQ bridge: queue prompts into the live DSH agent and report live agent ids.",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

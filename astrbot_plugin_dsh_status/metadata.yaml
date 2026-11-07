@@ -1,0 +1,8 @@
+name: astrbot_plugin_dsh_status
+display_name: DSH 状态看板
+short_desc: 在 QQ 里只读查看 DeepSeek Harness 当前会话进度，跑完自动通知。
+desc: 读取本机 DSH 的会话日志（只读，不碰 DSH 进程），提供 /status 进度卡片与完成推送。
+version: 0.1.0
+author: dsh-qq-bridge contributors
+repo: ""
+astrbot_version: ">=4.16,<5"

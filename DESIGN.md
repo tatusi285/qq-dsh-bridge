@@ -173,7 +173,7 @@ session.v4.jsonl.zstd                     │
 - **出路 2（进程内桥）**：桥改为宿主插件，跑在桌面进程里，直接复用活跃 agent，不 resume、不碰锁。代价是依赖内部接口。
 - **出路 3（只读）**：只读不写，绕过写锁；但拿不到 transcript，价值有限。
 
-下一步：1 小时 spike 验证出路 1 与出路 2 的可行性，再定架构。
+当时的下一步：1 小时 spike 验证出路 1 与出路 2 的可行性，再定架构。（结论：两条都未采用，改走只读方案。）
 
 ## 12. 只读版实现（M1'，2026-11-07）
 
@@ -183,7 +183,7 @@ M0 之后决定先交付只读能力：它不依赖写锁，也不改 DSH 一行
 
 | 文件 | 作用 |
 |---|---|
-| `tools/session_status.cjs` | 只读解析会话日志：zstd 分帧 → JSONL → 状态 JSON |
+| `astrbot_plugin_dsh_status/session_status.cjs` | 只读解析会话日志：zstd 分帧 → JSONL → 状态 JSON |
 | `astrbot_plugin_dsh_status/session_status.cjs` | 同上，插件内自包含副本 |
 | `astrbot_plugin_dsh_status/dsh_status.py` | 调用 Node、归一化状态、渲染卡片 |
 | `astrbot_plugin_dsh_status/main.py` | `/status` `/watch` `/unwatch` + 轮询推送 |

@@ -23,16 +23,14 @@ qq-dsh-bridge/
 ├─ DESIGN.md                          设计定稿、M0 结论、验收记录
 ├─ TESTING.md                         给别人测试用的说明
 ├─ tools/
-│  ├─ session_status.cjs              只读解析会话日志（多帧 zstd → JSONL → 状态）
 │  └─ status_cli.py                   命令行版状态卡片
 ├─ astrbot_plugin_dsh_status/         AstrBot 插件
 │  ├─ main.py                         /status /状态 /watch /unwatch + 轮询推送
 │  ├─ dsh_status.py                   状态归一化 + 卡片渲染
-│  ├─ session_status.cjs              插件内自包含副本
+│  ├─ session_status.cjs              只读解析会话日志（多帧 zstd → JSONL → 状态）
 │  ├─ _conf_schema.json               白名单 / 固定会话 / 轮询 / 紧凑模式
 │  └─ metadata.yaml, README.md
 ├─ dsh-plugin-qq-bridge/              宿主插件原型（插话用，实验性）
-├─ spike/                             M0 用的 ACP 探针
 └─ tests/
    ├─ test_status.py                  日志解析与卡片文案
    ├─ test_push.py                    推送去重、补发、首次不补推
